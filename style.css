@@ -1,0 +1,277 @@
+/* Mini reseteo de margen y padding */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Aspecto general de la página, tamaño de letra a 10px + fondo */
+html {
+	font-size: 62.5%;
+	background: black url(img/maxresdefault.jpg) repeat-y;
+	background-size: 100%;
+	color: #ddd;
+}
+
+/* --------------- CABECERA (zen + beauty...) --------------- */
+section.intro header {
+	padding: 4em;	
+	text-align: right;
+}
+
+section.intro header h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 3.5em;
+	color: #FDA34C;
+	text-shadow: 2px 2px 4px red; /* Sombreado para que resalte más */
+}
+
+section.intro header h2 {
+	font-family: 'Oleo Script', serif;
+	font-size: 2.5em;
+	color: white;
+}
+
+section.intro header h2 abbr {
+	color: yellow; /* Destacar CSS, ya que es el objetivo de la página, resaltar las maravillas de CSS */
+}
+/* --------------- FIN CABECERA --------------- */
+
+.intro .summary {
+	padding: 30px;
+}
+
+/* Texto centrado */
+.intro .summary p:first-child {
+	text-align: center;
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+/* Segundo parrafo con las descargas de los ficheros */
+.intro .summary p:last-child {
+	text-indent: -9999px; /* Quitamos el texto, para mostrar solo los ficheros */
+}
+
+/* Preparación del aspecto de los planetas */
+.intro .summary p:last-child > a {
+	display: block; /* Importante para poder darle tamaño y forma */
+	text-decoration: none;
+	text-indent: 0; /* Que muestre el texto de las a */
+	font-size: 1.4em;
+	color: white;
+	text-align: center;	
+	border-radius: 50%; /* Para que salgan redondos */
+	padding-top: 10px; /* Separar el texto de la parte superior */
+	font-weight: bold;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.2em;
+	position: absolute;
+}
+
+/* Planeta rojo */
+.intro .summary p:last-child > a:first-child {	
+	background-color: #B90505;	
+	box-shadow: 0 0 14px #B90505; /* Simulacion de atmósfera */
+	font-size: 1.7em;
+	height: 80px;
+	width: 100px;
+	word-spacing: 100px; /* Para que ponga una palabra por línea */
+	top: 70px;
+	left: 50px;
+}
+
+/* Planeta celeste */
+.intro .summary p:last-child > a:last-child {	
+	background-color: #53C8F4;	
+	box-shadow: 0 0 10px #53C8F4;	
+    top: 20px;
+    left: 210px;
+    height: 60px;
+	width: 75px;
+	word-spacing: 75px; /* Para que ponga una palabra por línea */
+}
+
+/* Configuracion básica de los triangulos */
+.intro .summary p:last-child > a:after {
+	content: ''; /* Content vacío porque no es texto, pero es obligatorio */
+	border-style: solid;
+	border-color: white transparent transparent transparent;	
+	position: absolute;
+	left: 50%;
+}
+
+.intro .summary p:last-child > a:first-child:after {	
+	border-width: 18px 18px 0 18px;	/* Sin borde inferior, lo que se resume en triángulo mirando hacia abajo */
+	top: 60px;
+	margin-left: -18px; /* Para que quede centrado 50% - los pixeles del borde izquierdo*/
+}
+
+.intro .summary p:last-child > a:last-child:after {	
+	border-width: 15px 15px 0 15px;
+	top: 48px;
+	margin-left: -15px;
+}
+
+/* -------------- Comienzo del texto ------------ */
+/* Posicionamiento del texto en la parte derecha, pero despegado */
+.preamble, .main {
+	float: right;
+	width: 60%;
+	margin-right: 5%;
+}
+
+/* Estilo de todos los títulos */
+.preamble h3, .main h3 {
+	color: #FDA34C;
+	font-size: 2em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+/* Estilo de los párrafos */
+.preamble p, .main p {
+	font-size: 1.35em;
+	margin-bottom: 0.5em;
+	font-family: "Times New Roman", serif;
+	line-height: 1.5em;
+}
+
+/* Estilo de los enlaces */
+.main a {
+	color: red;
+	text-decoration: none;
+}
+
+/* Para resaltarlos mínimamente al posicionarse encima */
+.main a:hover {
+	text-decoration: underline;
+}
+
+/* Estilo especial para la línea de autor y agradecimientos */
+.main p[role=contentinfo] {
+	text-align: center;
+	margin-top: 1em;
+}
+
+.main p[role=contentinfo] a {
+	color: yellow;
+}
+
+/* Estilo de los enlaces a html, css, creativecommons, ... */
+.main footer { /* Posicionamiento */
+	color: red;
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.main footer a {
+	display: inline-block; /* Importante para darles tamaño */
+	font-family: "Open Sans", sans-serif;
+	padding: 10px 20px;
+	margin: 10px 10px;
+	border: 2px solid #f00;
+	background-color: #000;
+	border-radius: 50%;
+	font-size: 1.2em;
+	-webkit-transition: all 1s; /* Para que no sea un cambio brusco de fondo */
+    transition: all 1s;
+}
+
+.main footer a:hover {	
+	text-decoration: none;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+}
+
+/* Estilo especial para los pares */
+.main footer a:nth-child(2n):hover {
+	background-color: white;
+	color: red;
+}
+
+footer a:nth-child(2n) {
+	color: white;
+	border-color: white;
+}
+/* Fin estilo especial para los pares */
+
+/* --------------------- Comienzo de la parte simulando el sol --------------------- */
+aside.sidebar {
+	float: left;
+	width: 60%; /* Pero se muestra menos de la mitad */
+	margin-left: -35%; /* Un 35% sobre 60% lo oculto */
+	margin-top: -10rem; /* Subirlo un poco para arriba */
+	padding-left: 0.5em;
+	color: black;
+	font-size: 1.5em;
+	background: -webkit-radial-gradient(#FDA34C 17%, yellow 95%);
+	background: radial-gradient(#FDA34C 17%, yellow 95%); /* Simulacion de la temperatura del sol */
+	border-radius: 50%;
+	box-shadow: 0px 0px 40px yellow; /* Simulación superficie del sol */
+}
+
+aside.sidebar .wrapper {
+	padding: 5em 0 5em 60%; /* Necesario para que el contenido salga en la parte visible */
+}
+
+/* Estilo de los títulos */
+aside.sidebar h3 {
+	color: white;
+	text-shadow: 1px 1px 2px #000;
+	font-size: 1.3em;
+	position: relative;
+}
+
+/* Separacion entre los divs con los contenidos */
+aside.sidebar div > div {
+	margin-top: 2em;
+}
+
+aside.sidebar ul {
+	list-style-type: none;
+	padding-left: 1em;
+}
+
+aside.sidebar li {
+	padding: 0.5em 0;
+}
+
+aside.sidebar a {
+	color: #851EB1;
+	text-decoration: none;
+	position: relative; /* Para posicionar correctamente << es necesario que sea relative */
+}
+
+/* Estilo de los enlaces a las diferentes diseños */
+aside.sidebar a:first-child {
+	color: #B90505;
+	font-weight: bold;
+	display: block; /* Para que by autor se coloque en una línea diferente */
+}
+
+/* Añade << delante de los diseños */
+aside.sidebar .design-selection a:first-child:before {
+	content:'\00BB';
+    margin-left: -1em;
+    position: absolute;
+    top: -2px;
+    left: 0;
+}
+
+/* Pone en cusriva los autores */
+aside.sidebar a:nth-child(2) {
+	font-style: italic;
+}
+
+/* Separación menor para los recursos */
+aside.sidebar .zen-resources li {
+	padding: 0.2em 0;
+}
+
+/* Estilo especial (a mi parecer menos importantes) para los recursos */
+aside.sidebar .zen-resources a {
+	color: black;
+	font-size: 1.2rem;
+}
